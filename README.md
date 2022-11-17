@@ -13,8 +13,10 @@ apt install nfs-kernel-server -y
 
 2.部署交叉编译器
 3.修改uboot和kernel的toolschain
-4.编译出uboot.binhe uImage dtb
+4.编译出uboot.bin uImage dtb
+//make LOADADDR=0x40008000 uImage
 5.使用fastboot烧录到SD card
+//fastboot flash kernel arch/arm/boot/uImage
 6.设置uboot变量
 
 bootargs=root=/dev/ram0 rw ramdisk=8192 initrd=0x42000040,8M console=ttySAC0,115200 init=/linuxrc mem=1024M
